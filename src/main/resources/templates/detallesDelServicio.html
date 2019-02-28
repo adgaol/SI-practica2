@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="Cabecera.css"/>
+<link rel="stylesheet" type="text/css" href="calendar.css"/>
+<title>HomeCliente</title>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script th:inline="javascript" src=serviciosPendientes.js></script>
+<script src=agenda.js></script>-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id=logo>
+<img  src="../images/logo.jpg"></img>
+</div>
+<div id=imageTop>
+<a id=cerrar th:href="@{/}">Cerrar Sesión</a>
+</div>
+<div id=menu>
+<a th:href="@{/hc}"> Home </a>
+<a id=buscarSevicio   th:href="@{/buscarServicios}"><!----> Buscar nuevo servicio </a>
+<a> Perfil </a>
+
+</div>
+<div id=contenido></div>
+<div>
+<table id=tabla class="table table-striped">
+  <tr id=cabeceraTabla>
+    <th class="celda-header">Nombre</th>
+    <th class="celda-header">Categoria</th> 
+    <th class="celda-header">Ubicacion</th>
+    <th class="celda-header">Precio</th>
+    <th class="celda-header">Dia de reserva</th>
+    <th class="celda-header">Hora de reserva</th>   
+  </tr>
+  <tr>
+    <td class="celda-body" th:text="${servicio.nombre}"></td>
+    <td  class="celda-body" th:text="${servicio.categoria}"></td> 
+    <td  class="celda-body" th:text="${servicio.ubicacion}"></td>
+    <td  class="celda-body" th:text=" ${servicio.precio}"></td>
+    <td  class="celda-body"> <input type="date" value=""/> </td>
+    <td  class="celda-body"> <input type="time" value=""/> </td>
+    <td  class="celda-body"><form method= "get" action="/hc">
+    <input type="submit" value="reservar"/> </form></td>
+
+  </tr>
+</table>
+</div>
+<div id="cal"> 
+    <table id="days"> 		
+		<td>mon</td> 
+		<td>tue</td> 
+		<td>wed</td> 
+		<td>thu</td> 
+		<td>fri</td> 
+		<td>sat</td>
+		<td>sun</td> 
+ 
+    </table> 
+    <div id="cal-frame"> 
+ 		<table class="curr">
+		    <tbody> 
+		        <tr><td class="nil"></td><td class="nil"></td><td class="nil"></td><td class="nil"></td><td>1</td><td>2</td><td>3</td></tr>
+		        <tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+		        <tr><td class="today">11</td><td>12</td><td>13</td><td class ="selected">14</td><td>15</td><td>16</td><td>17</td></tr>
+		        <tr><td>18</td><td class ="selected">19</td><td>20</td><td>21</td><td class ="selected">22</td><td>23</td><td>24</td></tr>
+		        <tr><td>25</td><td>26</td><td>27</td><td>28</td><td class="nil"></td><td class="nil"></td><td class="nil"></td></tr> 
+		    </tbody> 
+		</table>
+    </div> 
+</div>
+<div id="horas-reservadas"> 
+	<table id=tabla class="table table-striped">
+  <tr>
+    <th class="celda-header">Horas Reservadas</th>
+  </tr>
+  <tr id=cabeceraTabla>
+    <th class="celda-header">Hora</th>
+    <th class="celda-header">Dia</th>   
+  </tr>
+  <tr th:each="hora : ${servicio.horasOcupadas}">
+    <td class="celda-body" th:text="${hora.toString()}" ></td>
+    <td  class="celda-body" th:text="${hora.dia}"></td> 
+
+  </tr>
+</table>
+</div>
+</body>
+</html>

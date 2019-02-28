@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"></meta>
+<link rel="stylesheet" type="text/css" href="ServiciosPendientes.css"/>
+<title>serviciosPendientes</title>
+</head>
+<body>
+<div >
+<table>
+  <tr id=cabeceraTabla>
+    <th>Nombre</th>
+    <th>Descripción</th> 
+    <th>Categoria</th>
+    <th>Fecha</th>
+    <th>Precio</th>    
+    <th>Hora</th>
+    <th>Aceptar</th>
+    <th>Denegar</th>
+  </tr>
+  <tr  th:each="servicio : ${servicios}">
+    <td th:text="'Nombre: ' + ${servicio.nombre}"></td>
+    <td th:text="'Descripcion: ' + ${servicio.descripcion}"></td> 
+    <td th:text="'Categoria: ' + ${servicio.categoria}"></td>
+    <td th:text="'Duracion: ' + ${servicio.duracion}"></td>
+    <td th:text="'Precio: ' + ${servicio.precio}"></td>
+    <td>50</td>
+    <td><button>Aceptar</button> </td>
+    <td><input type="text"></input><button>Denegar</button> </td>
+  </tr>
+  <!--<tr  >
+    <td >a</td>
+    <td >a</td> 
+    <td >a</td>
+    <td >a</td>
+    <td >a</td>
+    <td>50</td>
+    <td><button>Aceptar</button> </td>
+    <td><input type="text"></input><button>Denegar</button> </td>
+  </tr>-->
+
+</table>
+</div>
+</body>
+</html>

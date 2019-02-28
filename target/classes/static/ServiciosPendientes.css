@@ -1,0 +1,29 @@
+@charset "ISO-8859-1";
+th{
+	width:142px;
+	border-style: solid;
+	background-color:red;
+}
+td{
+	width:142px;
+	border-style: solid;
+	background-color:red;
+	text-align: center;
+}
+table{
+	
+	border-style: solid;
+	float: left;
+}
+@media (max-width: 640px){
+	#tabla{
+	margin-top: 33px;
+	
+	}
+}
+@media (max-width: 415px){
+	#tabla{
+	margin-top: 66px;
+	
+	}
+}
