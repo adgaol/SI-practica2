@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
@@ -16,23 +15,32 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </head>
-<body>
-<div id=logo>
-<img  src="./images/logo.jpg"></img>
-</div>
-<div id=imageTop>
-<a id=cerrar >Cerrar Sesión</a>
-</div>
-<div id=menu>
-<a id=home> Home </a>
-<a> Mis servicios </a>
-<a id=pendientes   >  Solicitudes pendientes </a>
-<a id=agenda > Agenda </a>
-<a> Perfil </a>
+<form  method="post">
 
-</div>
-<br>
-<br>
-<div id=contenido></div>
-</body>
-</html>
+
+
+		<p>
+			<b>Nombre:</b> <input type='text' name='nombre' required/>
+		</p>
+		<p>
+			<b>Descripción:</b> <input type='text' name='descripcion' required/>
+		</p>
+		<p>
+			<b>Categoría:</b> <input type='text' name='categoria' required />
+		</p>
+		<p>
+			<b>Horas estimadas:</b> <input type="number" name='duracion' required/>
+		</p>
+		<p>
+			<b>Precio total:</b> <input type='number' name='precio' required/>
+		</p>
+		<p>
+			Profesional: <select name="nombre"> 
+				<!--  option th:if="editorial.id != null" th:each="editorial : ${editoriales}"
+					th:value="${editorial.nombre}" th:text="${editorial.nombre}"></option-->
+			</select> 
+		</p>
+		<input type='submit' value='Enviar' />
+	</form>
+
+</form>

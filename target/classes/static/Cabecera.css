@@ -16,7 +16,7 @@ a{
 	text-decoration: none;
 }
 #imageTop{
-	background-image: url("../images/fondoLog.png");
+	background-image: url("./images/fondoLog.png");
 	height: 143px;
 	width:auto;
 	background-color: black;

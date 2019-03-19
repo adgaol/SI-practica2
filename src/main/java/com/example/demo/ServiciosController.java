@@ -7,9 +7,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import models.Servicio;
+
 @Controller
 public class ServiciosController {
-	@RequestMapping("/mostrarPendientes")
+	/*@RequestMapping("/mostrarPendientes")
 	public String mostrar( Model model) {
 		
 		LinkedList<Servicio> servicios=new LinkedList<>();
@@ -35,6 +37,6 @@ public class ServiciosController {
 		//model.addAttribute("dia", arg1)
 
 		return "calendar";
-	}
+	}*/
 	
 }

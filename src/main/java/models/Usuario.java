@@ -1,33 +1,95 @@
-package com.example.demo;
+package models;
 
 import java.util.LinkedList;
 
-public class Profesional {
-	private String user;
-	private String password;
-	private LinkedList<Servicio> servicios;
-	private LinkedList<String> localidades;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name = "usuario")
+public class Usuario {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int userid;
+	private String nombre;
+	private String apellidos;
 	
-	public Profesional(String user, String password) {
+	private String correo;
+	private String password;
+	private String perfil;
+	private String fechadenacimiento;
+	
+	/*private LinkedList<Servicio> servicios;
+	private LinkedList<String> localidades;*/
+	
+	/*public Usuario(String user, String password) {
 		
-		this.user = user;
+		this.correo = user;
 		this.password = password;
 		this.servicios = new LinkedList<>();
 		this.localidades = new LinkedList<>();
+	}*/
+	public Usuario() {
+		
 	}
-	public String getUser() {
-		return user;
+	public Usuario(String nombre, String apellidos, String correo, String password, String perfil,
+			String fechaDeNacimiento) {
+		
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.correo = correo;
+		this.password = password;
+		this.perfil = perfil;
+		this.fechadenacimiento = fechaDeNacimiento;
 	}
+	
+	/*public String getUser() {
+		return correo;
+	}
+	
 	public void setUser(String user) {
-		this.user = user;
-	}
+		this.correo = user;
+	}*/
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public LinkedList<Servicio> getServicios() {
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getApellidos() {
+		return apellidos;
+	}
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+	public String getCorreo() {
+		return correo;
+	}
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+	public String getPerfil() {
+		return perfil;
+	}
+	public void setPerfil(String perfil) {
+		this.perfil = perfil;
+	}
+	public String getFechaDeNacimiento() {
+		return fechadenacimiento;
+	}
+	public void setFechaDeNacimiento(String fechaDeNacimiento) {
+		this.fechadenacimiento = fechaDeNacimiento;
+	}
+	
+	/*public LinkedList<Servicio> getServicios() {
 		return servicios;
 	}
 	public void setServicios(LinkedList<Servicio> servicios) {
@@ -38,7 +100,7 @@ public class Profesional {
 	}
 	public void setLocalidades(LinkedList<String> localidades) {
 		this.localidades = localidades;
-	}
+	}*/
 	
 
 }

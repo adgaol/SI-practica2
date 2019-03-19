@@ -2,10 +2,12 @@ package com.example.demo.Servicios;
 import java.util.LinkedList;
 
 import com.example.demo.*;
+
+import models.Usuario;
 public class Servicios {
 	private String nombre;
 	private String categoria;
-	private LinkedList<Profesional> profesional;
+	private LinkedList<Usuario> profesional;
 	private String ubicacion;
 	private LinkedList<Hora> horasOcupadas;
 	private int precio;
@@ -33,10 +35,10 @@ public class Servicios {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
-	public LinkedList<Profesional> getProfesional() {
+	public LinkedList<Usuario> getProfesional() {
 		return profesional;
 	}
-	public void setProfesional(LinkedList<Profesional> profesional) {
+	public void setProfesional(LinkedList<Usuario> profesional) {
 		this.profesional = profesional;
 	}
 	public String getUbicacion() {
