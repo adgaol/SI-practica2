@@ -1,11 +1,15 @@
-package models;
+package com.example.demo;
 
 import java.util.LinkedList;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.example.demo.Servicios.Hora;
@@ -21,6 +25,8 @@ public class Servicio {
 	private String categoria;
 	private int duracion;
 	private int precio;
+	@ManyToOne
+    @JoinColumn(name = "userid")
 	private Usuario profesional;
 		/*private String fecha;
 		private String hora;
@@ -91,7 +97,7 @@ public class Servicio {
 	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
-
+	
 	public Usuario getProfesional() {
 		return profesional;
 	}

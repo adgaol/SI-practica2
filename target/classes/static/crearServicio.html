@@ -3,6 +3,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="Cabecera.css"/>
 <link rel="stylesheet" type="text/css" href="ServiciosPendientes.css"/>
+<link rel="stylesheet" type="text/css" href="formulary.css"/>
 <title>HomeProfesional</title>
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -15,27 +16,27 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </head>
-<form  method="post">
+<form  method="post" id=formulario>
 
 
 
 		<p>
-			<b>Nombre:</b> <input type='text' name='nombre' required/>
+			<b>Nombre:</b> <input id=nombre type='text' name='nombre' required/>
 		</p>
 		<p>
-			<b>Descripción:</b> <input type='text' name='descripcion' required/>
+			<b>Descripción:</b> <input id=descripcion type='text' name='descripcion' required/>
 		</p>
 		<p>
-			<b>Categoría:</b> <input type='text' name='categoria' required />
+			<b>Categoría:</b> <input id=categoria type='text' name='categoria' required />
 		</p>
 		<p>
-			<b>Horas estimadas:</b> <input type="number" name='duracion' required/>
+			<b>Horas estimadas:</b> <input id=horas type="number" name='duracion' required/>
 		</p>
 		<p>
-			<b>Precio total:</b> <input type='number' name='precio' required/>
+			<b>Precio total:</b> <input id=precio type='number' name='precio' required/>
 		</p>
 		<p>
-			Profesional: <select name="nombre"> 
+			Profesional: <select id=profesioal name="nombre"> 
 				<!--  option th:if="editorial.id != null" th:each="editorial : ${editoriales}"
 					th:value="${editorial.nombre}" th:text="${editorial.nombre}"></option-->
 			</select> 

@@ -1,4 +1,4 @@
-package models;
+package com.example.demo;
 
 import java.util.LinkedList;
 
@@ -15,7 +15,11 @@ public class Solicitud {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int solicitudid;
+	@ManyToOne
+	@JoinColumn(name = "user_id")
 	private	Usuario cliente;
+	@ManyToOne
+    @JoinColumn(name = "servicio_id")
 	private Servicio servicio;
 	private String fecha;
 	private String direccion;
@@ -39,8 +43,7 @@ public class Solicitud {
 	}
 	 // Muchos usuarios hacia una solicitud.
     // La columna de la tabla con la clave ajena hacia usuario es "user_id"
-    @ManyToOne
-    @JoinColumn(name = "user_id")
+   
 	public Usuario getCliente() {
 		return this.cliente;
 	}
@@ -49,8 +52,7 @@ public class Solicitud {
 	}
 	// Muchos servicios hacia una solicitud.
     // La columna de la tabla con la clave ajena hacia servicio es "servicio_id"
-	@ManyToOne
-    @JoinColumn(name = "servicio_id")
+	
 	public Servicio getServicio() {
 		return servicio;
 	}

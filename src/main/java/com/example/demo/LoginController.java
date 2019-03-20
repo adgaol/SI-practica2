@@ -7,10 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.example.demo.Cliente.*;
 
-import models.Usuario;
-import repositories.ServicioRepository;
-import repositories.SolicitudRepository;
-import repositories.UsuarioRepository;
+
+
 @Controller
 public class LoginController {
 	

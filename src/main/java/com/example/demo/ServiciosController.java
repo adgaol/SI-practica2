@@ -2,15 +2,25 @@ package com.example.demo;
 
 import java.util.LinkedList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import models.Servicio;
+
+
 
 @Controller
 public class ServiciosController {
+	@Autowired
+	private UsuarioRepository users;/**/
+	
+	@Autowired
+	private ServicioRepository servicios;/**/
+	
+	@Autowired
+	private SolicitudRepository solicitudes;/**/
 	/*@RequestMapping("/mostrarPendientes")
 	public String mostrar( Model model) {
 		
