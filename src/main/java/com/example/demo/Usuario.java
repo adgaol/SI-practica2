@@ -12,14 +12,14 @@ import javax.persistence.Table;
 public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int userid;
+	private long userid;
 	private String nombre;
-	private String apellidos;
-	
+	private String apellidos;	
 	private String correo;
 	private String password;
 	private String perfil;
 	private String fechadenacimiento;
+	private String ciudad;
 	
 	/*private LinkedList<Servicio> servicios;
 	private LinkedList<String> localidades;*/
@@ -35,7 +35,7 @@ public class Usuario {
 		
 	}
 	public Usuario(String nombre, String apellidos, String correo, String password, String perfil,
-			String fechaDeNacimiento) {
+			String fechaDeNacimiento,String ciudad) {
 		
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -43,6 +43,7 @@ public class Usuario {
 		this.password = password;
 		this.perfil = perfil;
 		this.fechadenacimiento = fechaDeNacimiento;
+		this.ciudad=ciudad;
 	}
 	
 	/*public String getUser() {
@@ -87,6 +88,12 @@ public class Usuario {
 	}
 	public void setFechaDeNacimiento(String fechaDeNacimiento) {
 		this.fechadenacimiento = fechaDeNacimiento;
+	}
+	public String getCiudad() {
+		return ciudad;
+	}
+	public void setCiudad(String ciudad) {
+		this.ciudad = ciudad;
 	}
 	
 	/*public LinkedList<Servicio> getServicios() {

@@ -12,7 +12,7 @@ import com.example.demo.Cliente.*;
 @Controller
 public class LoginController {
 	
-	@RequestMapping("/")
+	@RequestMapping("/home")
 	public String buscador(Model model) {
 
 		

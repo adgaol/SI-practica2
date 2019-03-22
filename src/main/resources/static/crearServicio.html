@@ -4,7 +4,9 @@
 <link rel="stylesheet" type="text/css" href="Cabecera.css"/>
 <link rel="stylesheet" type="text/css" href="ServiciosPendientes.css"/>
 <link rel="stylesheet" type="text/css" href="formulary.css"/>
+
 <title>HomeProfesional</title>
+<script src=crearServicio.js></script>
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -16,7 +18,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </head>
-<form  method="post" id=formulario>
+<form  action="javascript:sendServicio()" id=formulario>
 
 
 
@@ -30,18 +32,18 @@
 			<b>Categoría:</b> <input id=categoria type='text' name='categoria' required />
 		</p>
 		<p>
-			<b>Horas estimadas:</b> <input id=horas type="number" name='duracion' required/>
+			<b>Horas estimadas:</b> <input id=duracion type="number" name='duracion' required/>
 		</p>
 		<p>
 			<b>Precio total:</b> <input id=precio type='number' name='precio' required/>
 		</p>
-		<p>
-			Profesional: <select id=profesioal name="nombre"> 
+		<!--  p>
+			Profesional: <select id=profesional name="nombre"> 
 				<!--  option th:if="editorial.id != null" th:each="editorial : ${editoriales}"
 					th:value="${editorial.nombre}" th:text="${editorial.nombre}"></option-->
 			</select> 
-		</p>
-		<input type='submit' value='Enviar' />
+		</p-->
+		<input id=enviar type='submit' value='Enviar' />
 	</form>
 
 </form>
