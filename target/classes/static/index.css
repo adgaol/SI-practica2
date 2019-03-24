@@ -25,7 +25,7 @@ body{
 		width: 290px;
 		height: 350px;
 	}
-	#enviarLoggin{
+	#enviarLogin{
 		margin-left: 130px;
 		
 	}
@@ -36,7 +36,7 @@ body{
 		width: 190px;
 		height: 450px;
 	}
-	#enviarLoggin{
+	#enviarLogin{
 		margin-left: 0px;
 		
 	}
@@ -76,7 +76,7 @@ body{
 	float: left;
 	margin-top: 32px;
 }
-#enviarLoggin{
+#enviarLogin{
 	margin-left: 200px;
 	margin-top: 30px;
 }

@@ -1,3 +1,10 @@
+var id;
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 function loadCrearServicio(){
 		$("#contenido").load("crearServicio.html");
 		//getUsuarios();
@@ -32,7 +39,7 @@ function loadCrearServicio(){
 		formData['precio'] = $('#precio').val();
 		
 		// Para el director hay que enviar la URI completa al objeto existente:
-		formData['profesional'] = 'http://localhost:8080/usuarios/'+1/*$('#profesional').val()*/;
+		formData['profesional'] = 'http://localhost:8080/usuarios/'+id/*$('#profesional').val()*/;
 		$.ajax({
 			type: "POST",
 			url: 'http://localhost:8080/servicios/',
@@ -44,11 +51,11 @@ function loadCrearServicio(){
 		});
 	}
 $(document).ready(function(){
-	loadCrearServicio;
+	//loadCrearServicio;
 	var botonHome=$("#home");
 	
 	botonHome.click(loadCrearServicio);
-	
+	id = getParameterByName('usuario');
 	
 	
 	

@@ -19,7 +19,7 @@ public class Servicio {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int servicioid;
+	private long servicioid;
 	private String nombre;
 	private String descripcion;
 	private String categoria;

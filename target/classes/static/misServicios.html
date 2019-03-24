@@ -3,19 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src=misServicios.js></script>
+
 </head>
 <body>
-
+<div id=eliminarForm>
+	<form  action="javascript:eliminarServicio()" id=removeForm>
+		<p>
+			<b>Id:</b> <input id=servicioID type='text' name='servicioID' required/>
+		</p>
+		
+		<input id=enviar type='submit' value='Enviar' />
+	</form>
+</div>
 <table id=misServiciosTable class="table table-striped">
   <tr id=misServiciosCabeceraTabla>
+  	<th>Id</th>
     <th>Nombre</th>
     <th>Descripción</th> 
     <th>Categoria</th>
     <th>Horas estimadas</th>
     <th>Precio</th>
-    <th></th>
-    <th></th>
+    
   </tr>
   
 </body>
