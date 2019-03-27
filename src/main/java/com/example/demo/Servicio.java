@@ -24,7 +24,7 @@ public class Servicio {
 	private String descripcion;
 	private String categoria;
 	private int duracion;
-	private int precio;
+	private Double precio;
 	@ManyToOne
     @JoinColumn(name = "userid")
 	private Usuario profesional;
@@ -49,7 +49,7 @@ public class Servicio {
 	
 	
 
-	public Servicio(String nombre, String descripcion, String categoria, int duracion, int precio,
+	public Servicio(String nombre, String descripcion, String categoria, int duracion, Double precio,
 			Usuario profesional) {
 		
 		this.nombre = nombre;
@@ -90,11 +90,11 @@ public class Servicio {
 		this.duracion = duracion;
 	}
 
-	public int getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(int precio) {
+	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
 	

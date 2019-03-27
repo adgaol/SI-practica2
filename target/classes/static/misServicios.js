@@ -19,7 +19,47 @@ function eliminarServicio(){
 		// El objeto hay que convertirlo a texto
 		
 		});
-
+	loadMisServicios();
+}
+function updatedServicio(){
+	// Primero se captan los datos del formulario y pasan a un objeto.
+	var formData = {};
+	if($('#nombre').val()!="")
+		var nombre = $('#nombre').val();
+	else
+		var nombre="null";
+	if($('#descripcion').val()!="")
+		var descripcion = $('#descripcion').val();
+	else
+		var descripcion="null";
+	if($('#categoria').val()!="")
+		var categoria = $('#categoria').val();
+	else
+		var categoria="null";
+	if($('#duracion').val()!="")
+		var duracion = $('#duracion').val();
+	else
+		var duracion="null";
+	if($('#precio').val()!="")
+		var precio = $('#precio').val();
+	else
+		var precio="null";
+	if($('#id').val()!=null)
+		var servicioId = $('#id').val();
+	else
+		var servicioId="null";
+	// Para el director hay que enviar la URI completa al objeto existente:
+	
+	$.ajax({
+		type: "PUT",
+		url: 'http://localhost:8080/control/updatedServicios/'+servicioId+"/"+nombre+"/"+descripcion+"/"+categoria+"/"+duracion+"/"+precio,
+		dataType: 'json',
+		async: false,
+		// El objeto hay que convertirlo a texto
+		data: JSON.stringify(formData),
+		contentType: 'application/json'
+	});
+	loadMisServicios();
 }
 function loadServicios(){
 	 

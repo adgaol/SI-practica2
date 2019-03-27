@@ -1,12 +1,16 @@
 package com.example.demo;
 
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -54,7 +58,27 @@ public class ServiciosController {
 		return "calendar";
 	}*/
 	@DeleteMapping(value="/borrarServicios/{id}")
-	    public void creado(@PathVariable String id){
+	    public void delete(@PathVariable String id){
 	        servicios.deleteById(Long.parseLong(id));
 	    }
+	@PutMapping(value = "/updatedServicios/{id}/{nombre}/{descripcion}/{categoria}/{duracion}/{precio}")
+		public void updated(@PathVariable String id,@PathVariable String nombre,@PathVariable String descripcion,@PathVariable String categoria,@PathVariable String duracion,@PathVariable String precio) {
+			Servicio service=servicios.findById(Long.parseLong(id)).get();
+			if(!nombre.equals("null")) {
+				service.setNombre(nombre);
+			}
+			if(!descripcion.equals("null")) {
+				service.setDescripcion(descripcion);
+			}
+			if(!categoria.equals("null")) {
+				service.setCategoria(categoria);
+			}
+			if(!duracion.equals("null")) {
+				service.setDuracion(Integer.parseInt(duracion));
+			}
+			if(!precio.equals("null")) {
+				service.setPrecio(Double.parseDouble(precio));
+			}
+			servicios.save(service);
+		}
 }

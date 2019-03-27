@@ -6,10 +6,36 @@
 
 </head>
 <body>
+<h3>Eliminar Servicio</h3>
 <div id=eliminarForm>
 	<form  action="javascript:eliminarServicio()" id=removeForm>
 		<p>
 			<b>Id:</b> <input id=servicioID type='text' name='servicioID' required/>
+		</p>
+		
+		<input id=enviar type='submit' value='Enviar' />
+	</form>
+</div>
+<h3>Modificar servicio</h3>
+<div id=formModificar>
+<form  action="javascript:updatedServicio()" id=udatedformulario>
+		<p>
+			<b>id:</b> <input id=id type='text' name='id' required/>
+		</p>
+		<p>
+			<b>Nombre:</b> <input id=nombre type='text' name='nombre' />
+		</p>
+		<p>
+			<b>Descripción:</b> <input id=descripcion type='text' name='descripcion' />
+		</p>
+		<p>
+			<b>Categoría:</b> <input id=categoria type='text' name='categoria' />
+		</p>
+		<p>
+			<b>Horas estimadas:</b> <input id=duracion type="number" name='duracion' />
+		</p>
+		<p>
+			<b>Precio total:</b> <input id=precio type='number' name='precio' />
 		</p>
 		
 		<input id=enviar type='submit' value='Enviar' />
