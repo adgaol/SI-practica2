@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-03-2019 a las 18:34:55
+-- Tiempo de generación: 30-03-2019 a las 12:22:05
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.10
 
@@ -25,6 +25,68 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `hibernate_sequence`
+--
+
+CREATE TABLE `hibernate_sequence` (
+  `next_val` bigint(20) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `hibernate_sequence`
+--
+
+INSERT INTO `hibernate_sequence` (`next_val`) VALUES
+(30),
+(30),
+(30),
+(30),
+(30),
+(30),
+(30),
+(30);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `mas_demandados`
+--
+
+CREATE TABLE `mas_demandados` (
+  `servicioid` bigint(20) NOT NULL,
+  `count` int(11) DEFAULT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  `nombreserv` varchar(255) DEFAULT NULL,
+  `ingresos` int(11) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `no_demandados`
+--
+
+CREATE TABLE `no_demandados` (
+  `servicioid` bigint(20) NOT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  `nombreserv` varchar(255) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `profesionales_demandados`
+--
+
+CREATE TABLE `profesionales_demandados` (
+  `userid` bigint(20) NOT NULL,
+  `count` int(11) DEFAULT NULL,
+  `nombre` varchar(255) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `servicio`
 --
 
@@ -33,7 +95,7 @@ CREATE TABLE `servicio` (
   `categoria` varchar(255) DEFAULT NULL,
   `descripcion` varchar(255) DEFAULT NULL,
   `duracion` int(11) NOT NULL,
-  `nombre` varchar(255) DEFAULT NULL,
+  `nombreserv` varchar(255) DEFAULT NULL,
   `precio` double DEFAULT NULL,
   `userid` bigint(20) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -42,7 +104,7 @@ CREATE TABLE `servicio` (
 -- Volcado de datos para la tabla `servicio`
 --
 
-INSERT INTO `servicio` (`servicioid`, `categoria`, `descripcion`, `duracion`, `nombre`, `precio`, `userid`) VALUES
+INSERT INTO `servicio` (`servicioid`, `categoria`, `descripcion`, `duracion`, `nombreserv`, `precio`, `userid`) VALUES
 (8, 'Electricista', 'Cambiamos tus enchufes', 2, 'Cambios de enchufes', 30.25, 1),
 (9, 'Fontanería', 'Desantrancamos donde sea', 3, 'Desatranques pepa', 50, 2),
 (10, 'Alimentación', 'Llevamos pan a domicilio', 2, 'Reparto de pan', 30.25, 7),
@@ -57,6 +119,19 @@ INSERT INTO `servicio` (`servicioid`, `categoria`, `descripcion`, `duracion`, `n
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `serv_user`
+--
+
+CREATE TABLE `serv_user` (
+  `solicitudid` bigint(20) NOT NULL,
+  `estado` varchar(255) DEFAULT NULL,
+  `fecha` varchar(255) DEFAULT NULL,
+  `nombre` varchar(255) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `solicitud`
 --
 
@@ -67,15 +142,15 @@ CREATE TABLE `solicitud` (
   `estado` varchar(255) DEFAULT NULL,
   `fecha` varchar(255) DEFAULT NULL,
   `importe` double DEFAULT NULL,
-  `user_id` bigint(20) DEFAULT NULL,
-  `servicio_id` bigint(20) DEFAULT NULL
+  `userid` bigint(20) DEFAULT NULL,
+  `servicioid` bigint(20) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `solicitud`
 --
 
-INSERT INTO `solicitud` (`solicitudid`, `descripcion`, `direccion`, `estado`, `fecha`, `importe`, `user_id`, `servicio_id`) VALUES
+INSERT INTO `solicitud` (`solicitudid`, `descripcion`, `direccion`, `estado`, `fecha`, `importe`, `userid`, `servicioid`) VALUES
 (18, '', 'Calle ibañez, Mostoles', 'COMPLETADO', '12/12/2018', 50, 6, 15),
 (19, '', 'Calle del medio, Madrid', 'COMPLETADO', '01/01/2019', 50, 4, 15),
 (20, '', 'Calle ibañez, Mostoles', 'COMPLETADO', '02/01/2019', 50, 5, 15),
@@ -86,7 +161,8 @@ INSERT INTO `solicitud` (`solicitudid`, `descripcion`, `direccion`, `estado`, `f
 (25, '', 'Calle ibañez, Mostoles', 'COMPLETADO', '07/01/2019', 50, 4, 11),
 (26, '', 'Calle ibañez, Mostoles', 'COMPLETADO', '08/01/2019', 50, 6, 12),
 (27, '', 'Calle ibañez, Mostoles', 'COMPLETADO', '09/01/2019', 50, 5, 16),
-(28, '', 'Calle ibañez, Mostoles', 'COMPLETADO', '10/01/2019', 50, 4, 14);
+(28, '', 'Calle ibañez, Mostoles', 'COMPLETADO', '10/01/2019', 50, 4, 14),
+(29, '', 'Calle ibañez, Mostoles', 'PENDIENTE', '10/01/2019', 50, 4, 14);
 
 -- --------------------------------------------------------
 
@@ -123,6 +199,24 @@ INSERT INTO `usuario` (`userid`, `apellidos`, `ciudad`, `correo`, `fechadenacimi
 --
 
 --
+-- Indices de la tabla `mas_demandados`
+--
+ALTER TABLE `mas_demandados`
+  ADD PRIMARY KEY (`servicioid`);
+
+--
+-- Indices de la tabla `no_demandados`
+--
+ALTER TABLE `no_demandados`
+  ADD PRIMARY KEY (`servicioid`);
+
+--
+-- Indices de la tabla `profesionales_demandados`
+--
+ALTER TABLE `profesionales_demandados`
+  ADD PRIMARY KEY (`userid`);
+
+--
 -- Indices de la tabla `servicio`
 --
 ALTER TABLE `servicio`
@@ -130,12 +224,18 @@ ALTER TABLE `servicio`
   ADD KEY `FKqvaojykt2usn2rgm2i4rbgjr6` (`userid`);
 
 --
+-- Indices de la tabla `serv_user`
+--
+ALTER TABLE `serv_user`
+  ADD PRIMARY KEY (`solicitudid`);
+
+--
 -- Indices de la tabla `solicitud`
 --
 ALTER TABLE `solicitud`
   ADD PRIMARY KEY (`solicitudid`),
-  ADD KEY `FKpilnoqjjmpdb677wphmd9hl4p` (`user_id`),
-  ADD KEY `FKabmh4gx7ta0ot6o3kf1v7tsje` (`servicio_id`);
+  ADD KEY `FKgxn5uedn5qw2371lyakvapg0y` (`userid`),
+  ADD KEY `FKjafrcupintsmlubykvwr0231i` (`servicioid`);
 
 --
 -- Indices de la tabla `usuario`

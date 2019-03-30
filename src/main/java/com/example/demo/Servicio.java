@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.example.demo.Servicios.Hora;
+
 @Entity
 @Table(name = "servicio")
 public class Servicio {
