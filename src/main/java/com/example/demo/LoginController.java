@@ -19,6 +19,13 @@ public class LoginController {
 
 		return "HomeProfesional";
 	}
+	@RequestMapping("/")
+	public String buscador2(Model model) {
+
+		
+
+		return "index";
+	}
 	/*@RequestMapping("/hc")
 	public String homeC(Model model) {
 

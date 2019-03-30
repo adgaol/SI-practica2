@@ -20,7 +20,7 @@ public class Servicio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long servicioid;
-	private String nombre;
+	private String nombreserv;
 	private String descripcion;
 	private String categoria;
 	private int duracion;
@@ -52,18 +52,31 @@ public class Servicio {
 	public Servicio(String nombre, String descripcion, String categoria, int duracion, Double precio,
 			Usuario profesional) {
 		
-		this.nombre = nombre;
+		this.nombreserv = nombre;
 		this.descripcion = descripcion;
 		this.categoria = categoria;
 		this.duracion = duracion;
 		this.precio = precio;
 		this.profesional = profesional;
 	}
+	
+	public long getServicioid() {
+		return servicioid;
+	}
+
+	public void setServicioid(long servicioid) {
+		this.servicioid = servicioid;
+	}
+
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
+
 	public String getNombre() {
-		return nombre;
+		return nombreserv;
 	}
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		this.nombreserv = nombre;
 	}
 
 	public String getDescripcion() {

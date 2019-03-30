@@ -12,14 +12,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class PracticaOficial1Application implements CommandLineRunner{
-	@Autowired
+	/*@Autowired
 	private UsuarioRepository users;
 	
 	@Autowired
 	private ServicioRepository servicios;
 	
 	@Autowired
-	private SolicitudRepository solicitudes;
+	private SolicitudRepository solicitudes;*/
 
 	public static void main(String[] args) {
 		SpringApplication.run(PracticaOficial1Application.class, args);
@@ -27,7 +27,7 @@ public class PracticaOficial1Application implements CommandLineRunner{
 	 @Override
 	 @Transactional
     public void run(String... strings) throws Exception {
-		Usuario antonio=new Usuario("Antonio","Salvador Ortega","antonio@gmail.com","cliente1","CUSTOMER","19/09/1982","Madrid");
+		/*Usuario antonio=new Usuario("Antonio","Salvador Ortega","antonio@gmail.com","cliente1","CUSTOMER","19/09/1982","Madrid");
 		Usuario laura=new Usuario("Laura","Sanchez Ramirez","laura@gmail.com","cliente2","CUSTOMER","23/05/1988","Barcelona");
 		Usuario clara=new Usuario("Clara María","Baltasar Alonso","clara@gmail.com","cliente3","CUSTOMER","09/06/1997","Badajoz");
 	    Usuario pepe=new Usuario("Pepe","Gómez Pérez","pepe@gmail.com","profesional1","PROFESIONAL","25/08/1979","Madrid");	
@@ -75,6 +75,7 @@ public class PracticaOficial1Application implements CommandLineRunner{
 		Solicitud solicitud9=new Solicitud(clara, servicio5, "08/01/2019", "Calle ibañez, Mostoles", 50.0, "COMPLETADO", "");
 		Solicitud solicitud10=new Solicitud(laura, servicio9, "09/01/2019", "Calle ibañez, Mostoles", 50.0, "COMPLETADO", "");
 		Solicitud solicitud11=new Solicitud(antonio, servicio7, "10/01/2019", "Calle ibañez, Mostoles", 50.0, "COMPLETADO", "");
+		Solicitud solicitud12=new Solicitud(antonio, servicio7, "10/01/2019", "Calle ibañez, Mostoles", 50.0, "PENDIENTE", "");
 		solicitudes.save(solicitud1);
 		solicitudes.save(solicitud2);
 		solicitudes.save(solicitud3);
@@ -86,6 +87,7 @@ public class PracticaOficial1Application implements CommandLineRunner{
 		solicitudes.save(solicitud9);
 		solicitudes.save(solicitud10);
 		solicitudes.save(solicitud11);
+		solicitudes.save(solicitud12);*/
 	 }
 }
 

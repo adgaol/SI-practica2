@@ -18,7 +18,11 @@ function identificar(){
 			var id=data._links.usuario.href.split("/")[posId];
 			location.href = "HomeAnalyst.html?usuario="+id;
  		} 
-	   
+		if(usuario["perfil"]==("CUSTOMER")){
+			var posId=data._links.usuario.href.split("/").length-1;
+			var id=data._links.usuario.href.split("/")[posId];
+			location.href = "HomeUser.html?usuario="+id;
+ 		} 
 			
 		
 

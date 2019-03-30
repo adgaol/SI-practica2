@@ -16,10 +16,10 @@ public class Solicitud {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int solicitudid;
 	@ManyToOne
-	@JoinColumn(name = "user_id")
+	@JoinColumn(name = "userid")
 	private	Usuario cliente;
 	@ManyToOne
-    @JoinColumn(name = "servicio_id")
+    @JoinColumn(name = "servicioid")
 	private Servicio servicio;
 	private String fecha;
 	private String direccion;
