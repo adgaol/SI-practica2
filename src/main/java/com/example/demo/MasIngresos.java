@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "masDemandados")
+@Table(name = "masIngresos")
 public class MasIngresos {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,17 +15,23 @@ public class MasIngresos {
 	private String nombreserv;
 	private String nombre;
 	private Integer ingresos;
-	
+	private Integer count;
 	public MasIngresos() {
 	
 	}
 
-	public MasIngresos(long servicioid, String nombreserv, String nombre, Integer count) {
+	
+
+	public MasIngresos(long servicioid, String nombreserv, String nombre, Integer ingresos, Integer count) {
+		super();
 		this.servicioid = servicioid;
 		this.nombreserv = nombreserv;
 		this.nombre = nombre;
-		this.ingresos = count;
+		this.ingresos = ingresos;
+		this.count = count;
 	}
+
+
 
 	public String getNombreserv() {
 		return nombreserv;
@@ -49,6 +55,18 @@ public class MasIngresos {
 
 	public void setIngresos(Integer ingresos) {
 		this.ingresos = ingresos;
+	}
+
+
+
+	public Integer getCount() {
+		return count;
+	}
+
+
+
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 	
 	

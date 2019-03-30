@@ -21,7 +21,7 @@ function loadMasIngresos(){
 			/*var posId=servicio._links.servicio.href.split("/").length-1;
 			var servicioId=servicio._links.servicio.href.split("/")[posId];*/
 			$('#misServiciosCabeceraTabla').after(
-                "<tr><td>"+servicio["nombreserv"]+"</td><td>"+servicio["nombre"]+"</td><td>"+servicio["ingresos"]+"</td></tr>"
+                "<tr><td>"+servicio["nombreserv"]+"</td><td>"+servicio["nombre"]+"</td><td>"+servicio["ingresos"]+"</td><td>"+servicio["count"]+"</td></tr>"
             ); 
 		}
 		

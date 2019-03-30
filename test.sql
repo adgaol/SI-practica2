@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-03-2019 a las 12:22:05
+-- Tiempo de generación: 30-03-2019 a las 14:01:44
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.10
 
@@ -56,8 +56,21 @@ CREATE TABLE `mas_demandados` (
   `servicioid` bigint(20) NOT NULL,
   `count` int(11) DEFAULT NULL,
   `nombre` varchar(255) DEFAULT NULL,
-  `nombreserv` varchar(255) DEFAULT NULL,
-  `ingresos` int(11) DEFAULT NULL
+  `nombreserv` varchar(255) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `mas_ingresos`
+--
+
+CREATE TABLE `mas_ingresos` (
+  `servicioid` bigint(20) NOT NULL,
+  `count` int(11) DEFAULT NULL,
+  `ingresos` int(11) DEFAULT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  `nombreserv` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -202,6 +215,12 @@ INSERT INTO `usuario` (`userid`, `apellidos`, `ciudad`, `correo`, `fechadenacimi
 -- Indices de la tabla `mas_demandados`
 --
 ALTER TABLE `mas_demandados`
+  ADD PRIMARY KEY (`servicioid`);
+
+--
+-- Indices de la tabla `mas_ingresos`
+--
+ALTER TABLE `mas_ingresos`
   ADD PRIMARY KEY (`servicioid`);
 
 --
